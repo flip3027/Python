@@ -8,10 +8,8 @@ grid = [['.', '.', '.', '.', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.']]
 
-x = 0
-y = 0
-z = x , y
 
-for i in grid:
-    print()
-
+for i in range(len(grid[0])):
+    print('')
+    for j in range(len(grid)):
+        print(grid[j][i], end='')
