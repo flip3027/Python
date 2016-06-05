@@ -1,49 +1,28 @@
+#! python3
 import random
 import sys, os
 
-tries = 0
 num = random.randint(1,10)
+messages =  ["Your guess is to LOW",
+             "Your guess is to HIGH",
+             "!!!!!!!!!!!!!YOU WIN!!!!!!!!!!!!!",
+             "You didn't enter a Integer!"
+             ]
 
-while tries < 4:
+print("Guess a number between 1-10:")
+for i in range(4):
     try:
-        guess = int(input("Enter a number Please"))
-        if guess == num:
-            print("!"
-                  "!!!!!!!!!!!!!YOU WIN!!!!!!!!!!!!!")
-            print("\t Do You Want to Play Again")
-            break
-        elif guess < num:
-            print("Guess higher")
+        guesses_left = 4 - i
+        print("guesses = " + str(guesses_left))
+
+        print("Enter your number:")
+        guess = int(input())
+        if guess < num:
+            print(messages[0])
+        elif guess > num:
+            print(messages[1])
         else:
-            print("Guess lower")
-        tries = tries +1
-        print (num)
+            print(messages[2])
+            break
     except ValueError:
-        print('That was not an integer!')
-
-print('test')
-
-
-
-
-
-
-
-"""
-
-"""
-
-
-
-
-
-
-"""
-if guess == num:
-    print('!!!!!!!!!!!!!!!!!!!YOU WIN!!!!!!!!!!!!!!!!!!!!!!')
-    break
-elif if guess < num:
-    print('Guess higher')
-else:
-    print('Guess lower')
-"""
+        print(messages[3])
