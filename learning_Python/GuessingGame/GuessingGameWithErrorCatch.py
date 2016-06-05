@@ -10,6 +10,7 @@ messages =  ["Your guess is to LOW",
              ]
 
 print("Guess a number between 1-10:")
+
 for i in range(4):
     try:
         guesses_left = 4 - i
