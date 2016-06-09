@@ -1,20 +1,21 @@
 tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['Alice', 'Bob', 'Carol', 'David'],
-             ['dogs', 'cats', 'moose', 'goose']]
+             ['dogs', 'cats', 'moose', 'Movie']
+             ]
+
 
 def printTable():
-    colWidths = [0] * len(tableData)
+    colwidth = [0] * len(tableData)
     for i in range(len(tableData[0])):
         for j in range(len(tableData)):
-            if len(tableData[j][i]) > colWidths[j]:
-                colWidths[j] = len(tableData[j][i])
-    print(colWidths)
+            if len(tableData[j][i]) > colwidth[j]:
+                colwidth[j] = len(tableData[j][i])
 
-    for x in range(len(tableData[0])):
-        for y in range(len(tableData)):
-            print(tableData[y][x].rjust(colWidths[y] + 1), end='')
+    for i in range(len(tableData[0])):
+        for j in range(len(tableData)):
+            print(tableData[j][i].rjust(colwidth[j] + 1), end=' ')
         print()
 
 
-
 printTable()
+
