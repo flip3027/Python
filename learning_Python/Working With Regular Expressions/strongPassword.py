@@ -10,19 +10,23 @@ passwordRegex = re.compile(r'''
 (?=.*()).{8,}     # make sure password length is 8 characters long
 ''', re.VERBOSE)
 
+exit = 'n'
 #Todo: make a screen prompt telling the user what to do
-print('''Enter a password: ''')
-print('\t (must have at least: 1 uppercase, 1 lowercase, 1 number and 8 characters long)')
-#Todo; put user's into a variable
-text = str(input())
-#Todo: Test user's input against the regex
-#Todo: if strong tell user then copy to clipboard else tell user to run again
-if passwordRegex.search(text) is not None:
-    print('Password IS strong')
-    print(text, ': has been copied to clipboard')
-    pyperclip.copy(text)
-else:
-    print('Password NOT strong enough')
-    print('Please run again and make strong password, Goodbye')
+while exit == 'n':
+    print('''Enter a password: ''')
+    print('\t (must have at least: 1 uppercase, 1 lowercase, 1 number and 8 characters long)')
+    # Todo; put user's into a variable
+    text = str(input())
+    # Todo: Test user's input against the regex
+    # Todo: if strong tell user then copy to clipboard else tell user to run again
+    if passwordRegex.search(text) is not None:
+        print('Password IS strong')
+        print(text, ': has been copied to clipboard')
+        pyperclip.copy(text)
+        exit = 'y'
+    else:
+        print('Password NOT strong enough')
+        print('Please run again and make strong password, Goodbye')
+
 
 
