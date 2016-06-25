@@ -3,7 +3,6 @@
 import pyperclip
 
 text = pyperclip.paste()
-
 '''
 TODO: put sentences into individual strings with the spilt module
 brake at '\n'' then
@@ -16,8 +15,7 @@ for i in range(len(lines)):
     lines[i] = '*  ' + lines[i]
 text = '\n'.join(lines)
 pyperclip.copy(text)
-print('The text has copy to the clipboard with BULLETS')
-
+print('The text has copy to the clipboard with ', '* BULLETS')
 
 
 
