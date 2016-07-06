@@ -1,7 +1,7 @@
 #! python3
 
-import os, sys
-
+import os, sys, re
+'''
 os.chdir('D:\\test')
 print(os.getcwd())
 
@@ -38,9 +38,15 @@ print(totalSize)
 list1 = ['jen', 'barbara', 'ann']
 list2 = ['paul', 'bob', 'alex']
 
-for name in range(len(list1)):
-      print('Hi, my name is %s \t Nice to meet you. My name is %s!' % (list1[name], 20))
 
 print(os.listdir('D:\\test'))
+'''
 
-open('D:\\test', w)
+file = open('D:\\test\\test1.txt')
+content = file.read()
+file.close()
+print(content)
+
+helloRegex = re.compile(r'''(
+(\A\w+
+)''',re.VERBOSE)
