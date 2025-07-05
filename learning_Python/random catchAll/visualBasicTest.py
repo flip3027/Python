@@ -6,4 +6,4 @@ pay = ((hour) * (wage) - float(withhold))
 if pay < 1000 :
     print("I need a raise")
 else:
-    print("OK")
+    print(f'your pay: {pay}')
